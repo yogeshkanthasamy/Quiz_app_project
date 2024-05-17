@@ -1,31 +1,17 @@
 import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+
 import { usercontext } from '../authentication/Auth'
-import './navbar.css'
-
-export default function Navbar() {
-  const loginuser=useContext(usercontext)
-  return (
-    
-      <div>
-        <div className='container_nav'>
-          <div className='logo'> <a href='/'>PARTICE QUIZ?</a></div>
-      <NavLink to={"/"} className='navlink'>Home</NavLink>
-      
-      {loginuser.logged &&
-      <>
-      
-      <NavLink to={"/profile"} className='navlink'>profile</NavLink>
-      </>
-    }
-      <NavLink to={"/about"} className='navlink'>About</NavLink>
-      <NavLink to={"/singup"} className='navlink'>Singup</NavLink>
-      <NavLink to={"/login"} className='navlink'>Login</NavLink>
-
-      {/* <div><butto>mode</butto></div> */}
-
-      </div>
-      
+import './login.css'
+export default function Loginpage(){
+   <div>
+    <div className='container_form'>
+      <form className='form'>
+        <lable className='lable_logi'>Email</lable>
+        <input placeholder='Enter Email' className='inputfield'></input><br></br>
+        <lable className='lable_logi'>Password</lable>
+        <input placeholder='Enter password'className='inputfield'></input><br></br>
+        <button className='button_login'> Login</button>
+      </form>
     </div>
-  )
+   </div>
 }

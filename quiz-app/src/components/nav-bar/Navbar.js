@@ -1,26 +1,27 @@
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { usercontext } from '../authentication/Auth'
-
+import './navbar.css'
 
 
 export default function Navbar() {
   const loginuser=useContext(usercontext)
   return (
     <div>
-      <Navbar>
-      <NavLink to={"/"}>Home</NavLink>
-      <NavLink to={""}></NavLink>
+      <div className='container_navbar'>
+        <div className='logo'><a href='/'>PARTICE QUIZ?</a></div>
+      <NavLink to={"/"} className='navlink'>Home</NavLink>
+      
       {loginuser.logged &&
       <>
       
-      <NavLink to={"/profile"}>profile</NavLink>
+      <NavLink to={"/profile"} className='navlink'>profile</NavLink>
       </>
     }
-      <NavLink to={"/about"}>About</NavLink>
-      <NavLink to={"/singup"}>Singup</NavLink>
-      <NavLink to={"/login"}>Login</NavLink>
-      </Navbar>
+      <NavLink to={"/about"} className='navlink'>About</NavLink>
+      <NavLink to={"/singup"} className='navlink'>Singup</NavLink>
+      <NavLink to={"/login"} className='navlink'>Login</NavLink>
+      </div>
     </div>
   )
 }
