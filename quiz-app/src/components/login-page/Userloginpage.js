@@ -13,4 +13,11 @@ export default function Userloginpage() {
       <form className='form'>
         <lable className='lable_logi'>Email</lable>
         <input placeholder='Enter Email' className='inputfield' onChange={(e)=>setemail(e.target.value)}></input><br></br>
-        <lable 
+        <lable className='lable_logi'>Password</lable>
+        <input placeholder='Enter password'className='inputfield' onChange={(e)=>setpassword(e.target.value)}></input><br></br>
+        <button type="submit"className='button_login'> Login</button>
+      </form>
+    </div>
+    </div>
+  )
+}
